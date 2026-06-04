@@ -171,6 +171,24 @@
       will-change: transform;
       transition: transform 0s linear;
     }
+    /* Vignette — oscurece bordes para profundidad */
+    .hero-vignette {
+      position: absolute; inset: 0; pointer-events: none; z-index: 1;
+      background:
+        radial-gradient(ellipse 110% 90% at 50% 50%,
+          transparent 35%,
+          rgba(20,20,20,.45) 75%,
+          rgba(10,10,10,.75) 100%);
+    }
+    /* Overlay de color — toque beige-verde muy sutil en diagonal */
+    .hero-color-wash {
+      position: absolute; inset: 0; pointer-events: none; z-index: 1;
+      background:
+        linear-gradient(135deg,
+          rgba(141,198,63,.04) 0%,
+          transparent 45%,
+          rgba(212,197,169,.04) 100%);
+    }
 
     /* ─── STATS BAR ──────────────────────────────────── */
     #stats { background:var(--bg-dark-2); padding:3.5rem 3rem; }
@@ -425,6 +443,8 @@
 <!-- HERO -->
 <section id="hero" role="main">
   <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-color-wash"></div>
   <div class="hero-grain"></div>
   <div class="hero-mesh"></div>
   <div class="hero-inner">
